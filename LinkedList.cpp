@@ -79,6 +79,8 @@ bool LinkedList::removeAtLocation(int n)
        head = head->next;
        delete temp;
        temp = nullptr;
+       isDeleted = true;
+       return isDeleted;
    }
 
    Node *pres = head;
@@ -102,6 +104,7 @@ bool LinkedList::removeAtLocation(int n)
    prev->next = pres->next;
    delete pres;
    pres = prev->next;
+   isDeleted = true;
 
    return isDeleted;
 }
