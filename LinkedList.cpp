@@ -7,6 +7,11 @@ using namespace std;
 LinkedList::~LinkedList()
 {
    //TODO
+   while (head != NULL) {
+      Node *temp = head->next;
+      delete head;
+      head = temp;
+   }
    cout<<"network deleted"<<endl;
 }
 
